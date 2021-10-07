@@ -87,11 +87,14 @@ export default class extends React.Component {
 
 	// https://github.com/moroshko/react-autosuggest#onsuggestionselected-optional
 	onSuggestionSelected = (ev, { suggestionValue }) => {
-		const { name } = this.props
-		this.onChange({target: {
-			name,
-			value: suggestionValue,
-		}})
+		
+		this.setState({ value: suggestionValue })
+		
+		//const { name } = this.props
+		//this.onChange({target: {
+		//	name,
+		//	value: suggestionValue,
+		//}})
 	}
 
 	componentDidCatch(error, info) {
